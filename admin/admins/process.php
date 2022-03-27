@@ -43,7 +43,7 @@ if (isset($_GET['edit'])) {
         $row = $result->fetch_array();
         $email = $row['email'];
         $password = $row['password'];
-        $admin_user_name = $row['admin_user_name']
+        $admin_user_name = $row['admin_user_name'];
     }
 }
 if (isset($_POST['update'])) {
