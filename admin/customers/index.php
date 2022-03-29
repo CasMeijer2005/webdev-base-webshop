@@ -10,7 +10,8 @@ include_once('../../core/db_connect.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
 
@@ -30,27 +31,29 @@ include_once('../../core/db_connect.php');
     <div class="container">
         <?php
         $mysqli = new mysqli('localhost', 'root', '', 'webshop') or die(mysqli_error($mysqli));
-        $result = $mysqli->query("SELECT * from admin_user") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * from customer") or die($mysqli->error);
         ?>
         <div class="row justify-conent-center">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>admin name</th>
+                        <th>name</th>
                         <th>email</th>
-                        <th>password</th>
+                        <th>phone number</th>
                         <th>action</th>
                     </tr>
                 </thead>
                 <?php
                 while ($row = $result->fetch_assoc()) : ?>
                     <tr>
-                        <td><?php echo $row['admin_user_name'] ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
+                        <td><?php echo $row['first_name'] ?></td>
+                        <td><?php echo $row['e-mailadres']; ?></td>
+                        <td><?php echo $row['phone']; ?></td>
+
                         <td>
-                            <a href="index.php?edit=<?php echo $row['admin_user_id']; ?>" class="btn btn-info">Edit</a>
-                            <a href="process.php?delete=<?php echo $row['admin_user_id']; ?>" class="btn btn-danger">delete</a>
+                            <a href="index.php?edit=<?php echo $row['customer_id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="process.php?delete=<?php echo $row['customer_id']; ?>" class="btn btn-danger">delete</a>
+                            <a href="#" class="btn btn-info">see more</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -67,19 +70,19 @@ include_once('../../core/db_connect.php');
         }
         ?>
         <div class="row justify-content-center">
-            <form action="process.php" method="POSt">
+            <form action="process.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form-group">
-                    <label>email</label>
-                    <input type="text" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="enter your email">
+                    <label>first name</label>
+                    <input type="text" name="first_name" class="form-control" value="<?php echo $first_name; ?>" placeholder="enter your firstname">
+                    <label>middle name</label>
+                    <input type="text" name="middle_name" class="form-control" value="<?php echo $middle_name; ?>" placeholder="enter your middle name">
+                    <label>last name</label>
+                    <input type="text" name="last_name" class="form-control" value="<?php echo $last_name; ?>" placeholder="enter your last name">
                 </div>
                 <div class="form-group">
-                    <label>admin user name</label>
-                    <input type="text" name="admin_user_name" class="form-control" value="<?php echo $admin_user_name; ?>" placeholder="enter the admin name">
-                </div>
-                <div class="form-group">
-                    <label>password</label>
-                    <input type="text" name="password" class="form-control" value="<?php echo $password; ?>" placeholder="enter your password ">
+                    <label>phone number</label>
+                    <input type="text" name="phone" class="form-control" value="<?php echo $phone; ?>" placeholder="enter your phone number">
                 </div>
                 <div class="form-group">
                     <?php

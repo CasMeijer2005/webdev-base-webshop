@@ -6,7 +6,7 @@ include('core/checklogin_admin.php');
     <li><a href="admins/">admin</a></li>
     <li><a href="orders/">Bestellingen</a></li>
     <li><a href="producten/">Producten</a></li>
-    <li><a href="users/">users</a></li>
+    <li><a href=" customers/">customer</a></li>
 </ul>
 <?php
 include('core/footer.php');

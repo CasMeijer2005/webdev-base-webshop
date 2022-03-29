@@ -36,7 +36,6 @@ include_once('../../core/db_connect.php');
             <table class="table">
                 <thead>
                     <tr>
-                        <th>admin name</th>
                         <th>email</th>
                         <th>password</th>
                         <th>action</th>
@@ -45,7 +44,6 @@ include_once('../../core/db_connect.php');
                 <?php
                 while ($row = $result->fetch_assoc()) : ?>
                     <tr>
-                        <td><?php echo $row['admin_user_name'] ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['password']; ?></td>
                         <td>
@@ -72,10 +70,6 @@ include_once('../../core/db_connect.php');
                 <div class="form-group">
                     <label>email</label>
                     <input type="text" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="enter your email">
-                </div>
-                <div class="form-group">
-                    <label>admin user name</label>
-                    <input type="text" name="admin_user_name" class="form-control" value="<?php echo $admin_user_name; ?>" placeholder="enter the admin name">
                 </div>
                 <div class="form-group">
                     <label>password</label>
