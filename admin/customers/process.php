@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
-include('../../core/db_connect.php');
+
 $id = 0;
 $update = false;
 $first_name = ' ';

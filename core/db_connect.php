@@ -26,12 +26,12 @@ if ($con->connect_errno) {
     exit();
 }
 
-// define("BASEURL", "http://localhost/webdev-base-webshop/");
-// define("BASEURL_CMS", "http://localhost/webdev-base-webshop/admin/");
+define("BASEURL", "http://localhost/webdev-base-webshop/");
+define("BASEURL_CMS", "http://localhost/webdev-base-webshop/admin/");
 
-// function prettyDump($var)
-// {
-//     echo "<pre>";
-//     var_dump($var);
-//     echo "</pre>";
-// }
+function prettyDump($var)
+{
+    echo "<pre>";
+    var_dump($var);
+    echo "</pre>";
+}

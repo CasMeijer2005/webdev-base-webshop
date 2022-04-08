@@ -1,12 +1,17 @@
-<?php
-    include($_SERVER['DOCUMENT_ROOT'].'/webdev-base-webshop/core/db_connect.php');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Webshop</title>
-</head>
-<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/webdev-base-webshop/admin/index_loggedin.php">admin pannel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <!-- <div class=""> -->
+            <a class="nav-link" href="/webdev-base-webshop/admin/admins/">admins</a>
+            <a class="nav-link" href="/webdev-base-webshop/admin/orders/">bestellingen</a>
+            <a class="nav-link" href="/webdev-base-webshop/admin/product/index.php">producten</a>
+            <a class="nav-link" href="/webdev-base-webshop/admin/customers/">customer</a>
+            <!-- </div> -->
+            <a class="nav-link" href="/webdev-base-webshop/admin/core/logout.php">logout</a>
+        </div>
+    </div>
+</nav>

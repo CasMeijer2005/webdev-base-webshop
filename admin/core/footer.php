@@ -1,6 +1,6 @@
-    
 </body>
+
 </html>
 <?php
-    $con->close();
+$con->close();
 ?>

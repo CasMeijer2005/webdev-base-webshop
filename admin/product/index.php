@@ -34,7 +34,7 @@ include_once('../core/checklogin_admin.php');
         $result = $mysqli->query("SELECT * from admin_user") or die($mysqli->error);
         ?>
         <div class="row justify-content-center">
-            <form action="process.php" method="POST">
+            <form action="process.php" method="POSt">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="h1">create a new account</div>
                 <div class="form-group">
