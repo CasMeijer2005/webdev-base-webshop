@@ -16,4 +16,5 @@ include_once('../core/checklogin_admin.php');
 
 <body>
     <?php include('../core/header.php') ?>
+    <div class="h1">this page is comming soon</div>
     <?php include('../core/footer.php') ?>

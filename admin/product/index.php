@@ -31,20 +31,42 @@ include_once('../core/checklogin_admin.php');
     <div class="container">
         <?php
         $mysqli = new mysqli('localhost', 'root', '', 'webshop') or die(mysqli_error($mysqli));
-        $result = $mysqli->query("SELECT * from admin_user") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * from product") or die($mysqli->error);
         ?>
         <div class="row justify-content-center">
-            <form action="process.php" method="POSt">
+            <form action="process.php" method="POSt" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <div class="h1">create a new account</div>
+                <div class="h1">create a new product</div>
                 <div class="form-group">
-                    <label>email</label>
-                    <input type="text" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="enter your email">
+                    <label>product name</label>
+                    <input type="text" name="product_name" class="form-control" value="<?php echo $name; ?>" placeholder="enter the product name">
                 </div>
                 <div class="form-group">
-                    <label>password</label>
-                    <input type="text" name="password" class="form-control" value="<?php echo $password; ?>" placeholder="enter your password ">
+                    <label>product description</label>
+                    <textarea type="text" name="product_description" class="form-control" value="<?php echo $description; ?>" placeholder="enther the product description"><?php echo $description; ?></textarea>
                 </div>
+                <div class="form-group">
+                    <label>category</label>
+                    <input type="text" name="category" class="form-control" value="<?php echo $category_id; ?>" placeholder="enter the category id ">
+                </div>
+                <div class="form-group">
+                    <label>price</label>
+                    <input type="text" name="price" class="form-control" value="<?php echo $price; ?>" placeholder="enter the price">
+                </div>
+                <div class="form-group">
+                    <label>color</label>
+                    <input type="text" name="color" class="form-control" value="<?php echo $color; ?>" placeholder="enter the product color">
+                </div>
+                <div class="form-group">
+                    <label>weight</label>
+                    <input type="text" name="weight" class="form-control" value="<?php echo $weight; ?>" placeholder="enter the product weight">
+                </div>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    Select Image File to Upload:
+                    <input type="file" name="file">
+                    <input type="submit" name="submit" value="Upload">
+                </form>
+
                 <div class="form-group">
                     <?php
                     if ($update == true) :
@@ -60,19 +82,26 @@ include_once('../core/checklogin_admin.php');
             <table class="table">
                 <thead>
                     <tr>
-                        <th>email</th>
-                        <th>password</th>
-                        <th>action</th>
+                        <th>name</th>
+                        <th>description</th>
+                        <th>category_id</th>
+                        <th>price</th>
+                        <th>color</th>
+                        <th>actions</th>
                     </tr>
                 </thead>
                 <?php
                 while ($row = $result->fetch_assoc()) : ?>
                     <tr>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['description']; ?></td>
+                        <td><?php echo $row['category_id']; ?></td>
+                        <td><?php echo $row['price']; ?></td>
+                        <td><?php echo $row['color']; ?></td>
+
                         <td>
-                            <a href="index.php?edit=<?php echo $row['admin_user_id']; ?>" class="btn btn-info">Edit</a>
-                            <a href="process.php?delete=<?php echo $row['admin_user_id']; ?>" class="btn btn-danger">delete</a>
+                            <a href="index.php?edit=<?php echo $row['product_id']; ?>" class="btn btn-info">Edit</a>
+                            <a href="process.php?delete=<?php echo $row['product_id']; ?>" class="btn btn-danger">delete</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

@@ -11,6 +11,7 @@ include_once('../../core/db_connect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -35,12 +36,21 @@ include_once('../../core/db_connect.php');
         $result = $mysqli->query("SELECT * from customer") or die($mysqli->error);
         ?>
         <div class="row justify-conent-center">
+            <div class="h1">customer update crud comming soon</div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>name</th>
+                        <th>first name</th>
+                        <th>middle name</th>
+                        <th>last name</th>
+                        <th>gender</th>
+                        <th>street</th>
+                        <th>zip code</th>
+                        <th>city</th>
+                        <th>phone</th>
                         <th>email</th>
-                        <th>phone number</th>
+                        <th>password</th>
+                        <th>newsletter subscription</th>
                         <th>action</th>
                     </tr>
                 </thead>
@@ -48,13 +58,20 @@ include_once('../../core/db_connect.php');
                 while ($row = $result->fetch_assoc()) : ?>
                     <tr>
                         <td><?php echo $row['first_name'] ?></td>
-                        <td><?php echo $row['e-mailadres']; ?></td>
+                        <td><?php echo $row['middle_name'] ?></td>
+                        <td><?php echo $row['last_name'] ?></td>
+                        <td><?php echo $row['street'] ?></td>
+                        <td><?php echo $row['house_number'] ?></td>
+                        <td><?php echo $row['house_number_addon'] ?></td>
+                        <td><?php echo $row['zip_code'] ?></td>
+                        <td><?php echo $row['citty'] ?></td>
                         <td><?php echo $row['phone']; ?></td>
+                        <td><?php echo $row['e-mailadres']; ?></td>
+
 
                         <td>
-                            <a href="index.php?edit=<?php echo $row['customer_id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="process.php?delete=<?php echo $row['customer_id']; ?>" class="btn btn-danger">delete</a>
-                            <a href="#" class="btn btn-info">see more</a>
+                            <a href="index.php?edit=<?php echo $row['customer_id']; ?>" class="btn btn-primary"><i class='bx bxs-edit-alt'></i></a>
+                            <a href="process.php?delete=<?php echo $row['customer_id']; ?>" class="btn btn-danger"><i class='bx bxs-trash-alt'></i></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

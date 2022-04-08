@@ -10,6 +10,7 @@
             <a class="nav-link" href="/webdev-base-webshop/admin/orders/">bestellingen</a>
             <a class="nav-link" href="/webdev-base-webshop/admin/product/index.php">producten</a>
             <a class="nav-link" href="/webdev-base-webshop/admin/customers/">customer</a>
+            <a class="nav-link" href="/webdev-base-webshop/admin/categorys/">categorys</a>
             <!-- </div> -->
             <a class="nav-link" href="/webdev-base-webshop/admin/core/logout.php">logout</a>
         </div>
