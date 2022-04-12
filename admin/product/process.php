@@ -14,6 +14,7 @@ $category_id = ' ';
 $price = ' ';
 $color = ' ';
 $weight = ' ';
+
 $mysqli = new mysqli('localhost', 'root', '', 'webshop') or die(mysqli_error($mysqli));
 if (isset($_POST['save'])) {
     $name = $_POST['product_name'];
@@ -23,6 +24,7 @@ if (isset($_POST['save'])) {
     $color = $_POST['color'];
     $weight = $_POST['weight'];
     $query = "INSERT INTO product (`name`,`description`, `category_id`, `price`, `color`, `weight`) VALUES ('$name','$description', '$category_id', '$price', '$color', '$weight')";
+
     echo $query;
     $mysqli->query($query) or
         die($mysqli->error);

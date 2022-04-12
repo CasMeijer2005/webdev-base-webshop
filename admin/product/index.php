@@ -11,6 +11,7 @@ include_once('../core/checklogin_admin.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -61,11 +62,9 @@ include_once('../core/checklogin_admin.php');
                     <label>weight</label>
                     <input type="text" name="weight" class="form-control" value="<?php echo $weight; ?>" placeholder="enter the product weight">
                 </div>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select Image File to Upload:
-                    <input type="file" name="file">
-                    <input type="submit" name="submit" value="Upload">
-                </form>
+                <div class="form-group"> Select Image File to Upload:
+                    <input type="file" name="file" />
+                </div>
 
                 <div class="form-group">
                     <?php
@@ -75,6 +74,7 @@ include_once('../core/checklogin_admin.php');
                     <?php else : ?>
                         <button type="submit" class="btn btn-primary" name="save">save</button>
                     <?php endif; ?>
+
                 </div>
             </form>
         </div>
@@ -100,8 +100,8 @@ include_once('../core/checklogin_admin.php');
                         <td><?php echo $row['color']; ?></td>
 
                         <td>
-                            <a href="index.php?edit=<?php echo $row['product_id']; ?>" class="btn btn-info">Edit</a>
-                            <a href="process.php?delete=<?php echo $row['product_id']; ?>" class="btn btn-danger">delete</a>
+                            <a href="index.php?edit=<?php echo $row['product_id']; ?>" class="btn btn-info"><i class='bx bxs-edit-alt'></i></a>
+                            <a href="process.php?delete=<?php echo $row['product_id']; ?>" class="btn btn-danger"><i class='bx bxs-trash-alt'></i></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
