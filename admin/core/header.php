@@ -12,6 +12,7 @@
             <a class="nav-link" href="/webdev-base-webshop/admin/customers/">customer</a>
             <a class="nav-link" href="/webdev-base-webshop/admin/categorys/">categorys</a>
             <a class="nav-link" href="/webdev-base-webshop/admin/product_img/">images</a>
+            <a class="nav-link" href="/webdev-base-webshop/admin/joins/">joins</a>
             <!-- </div> -->
             <a class="nav-link" href="/webdev-base-webshop/admin/core/logout.php">logout</a>
         </div>

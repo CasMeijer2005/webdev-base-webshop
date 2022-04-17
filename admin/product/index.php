@@ -62,9 +62,7 @@ include_once('../core/checklogin_admin.php');
                     <label>weight</label>
                     <input type="text" name="weight" class="form-control" value="<?php echo $weight; ?>" placeholder="enter the product weight">
                 </div>
-                <div class="form-group"> Select Image File to Upload:
-                    <input type="file" name="file" />
-                </div>
+
 
                 <div class="form-group">
                     <?php

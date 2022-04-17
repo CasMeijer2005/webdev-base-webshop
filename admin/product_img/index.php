@@ -25,7 +25,8 @@ if (isset($_POST['upload'])) {
     } else {
         echo "Error.Please try again";
     }
-} ?>
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,11 +44,12 @@ if (isset($_POST['upload'])) {
     <form method="post" action enctype="multipart/form-data">
         <div class="form-group">
             <input type="file" name="file" />
-            <button type="submit" name="upload">upload</button>
         </div>
         <div class="form-group">
-            <input type="select">
+            <lable>image name</lable>
+            <input type="text" name=img_name>
         </div>
+        <button type=" submit" name="upload">upload</button>
     </form>
 
 </body>
